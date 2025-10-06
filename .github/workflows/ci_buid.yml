@@ -1,17 +1,8 @@
 name: Run build
 
 on:
-  push:
-    branches:
-      - main
-    paths-ignore:
-      - '**/*.md'
-      - '**/*.adoc'
+  workflow_dispatch: # Allow manual triggers
   pull_request:
-    paths-ignore:
-      - '**/*.md'
-      - '**/*.adoc'
-
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
