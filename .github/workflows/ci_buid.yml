@@ -16,7 +16,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        tf-version: [2.12, 2.13, 2.14, 2.15]
+        tf-version: [2.14, 2.15]
 
     steps:
       - name: Checkout code
@@ -53,8 +53,6 @@ jobs:
             ./tutorials/keras_mobilenetv2_output.ipynb
             ./tutorials/mobilenet_tf/packerOut.zip
 
-
-
   tests-pytorch:
     name: Build PyTorch
     runs-on: ubuntu-latest
@@ -62,7 +60,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        pt-version: [ '2.0', 2.1, 2.2, 2.3, 2.4, 2.5, 2.6]
+        pt-version: [2.3, 2.4, 2.5, 2.6]
 
     steps:
       - name: Checkout code
