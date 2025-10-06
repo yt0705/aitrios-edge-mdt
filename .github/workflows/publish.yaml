@@ -18,11 +18,7 @@ on:
       CUSTOM_LAYERS_VERSION:
         description: "version of edge-mdt-custom-layers"
         required: true
-      IS_NIGHTLY:
-        description: "Create nightly build"
-        required: false
-        default: true
-        type: boolean
+
 jobs:
   build-and-publish:
     runs-on: ubuntu-latest
@@ -42,8 +38,7 @@ jobs:
           IMX500_CONVERTER_VERSION=${{ github.event.inputs.IMX500_CONVERTER_VERSION }} \
           MCT_VERSION=${{ github.event.inputs.MCT_VERSION }} \
           CUSTOM_LAYERS_VERSION=${{ github.event.inputs.CUSTOM_LAYERS_VERSION }} \
-          TPC_VERSION=${{ github.event.inputs.TPC_VERSION }} \
-          IS_NIGHTLY=${{ github.event.inputs.IS_NIGHTLY }} ./build.sh
+          TPC_VERSION=${{ github.event.inputs.TPC_VERSION }} ./build.sh
 
       - name: List build artifacts
         run: |

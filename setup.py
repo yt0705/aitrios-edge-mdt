@@ -38,8 +38,6 @@ tpc_dev_def_version = "1.1.0" if is_dev else None
 tcp_version = get_env('TPC_VERSION', tpc_dev_def_version)
 custom_layers_def_version = "1.0.0" if is_dev else None
 custom_layers_version = get_env('CUSTOM_LAYERS_VERSION', custom_layers_def_version)
-is_nightly = os.environ.get("IS_NIGHTLY", "true") == "true"
-name = 'edge-mdt-nightly' if is_nightly else 'edge-mdt'
 
 def get_log_description():
     with open("README.md", "r") as fh:
@@ -48,7 +46,7 @@ def get_log_description():
 
 
 setup(
-    name=name,
+    name="edge-mdt",
     author="ssi-dnn-dev",
     author_email="ssi-dnn-dev@sony.com",
     maintainer="ssi-dnn-dev",
