@@ -68,7 +68,7 @@ Typical use of Edge-MDT:
 - Use **Converter** to convert the output of MCT to a binary image that
   can be packaged and loaded onto the device
 
-The figure [Model development flow](#model-dev-flow) shows the entire
+The figure [Model development flow](https://raw.githubusercontent.com/SonySemiconductorSolutions/aitrios-edge-mdt/main/docs/images/EdgeMDT-blocks.png) shows the entire
 development and deployment flow, and where MCT and the Converter fit in
 as part of the entire flow. After using Converter, you should use the
 output from Converter as input to the
