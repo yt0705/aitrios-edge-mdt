@@ -47,10 +47,8 @@ def get_log_description():
 
 setup(
     name="edge-mdt",
-    author="ssi-dnn-dev",
-    author_email="ssi-dnn-dev@sony.com",
-    maintainer="ssi-dnn-dev",
-    maintainer_email="ssi-dnn-dev@sony.com",
+    author="sss-dnn-dev",
+    maintainer="sss-dnn-dev",
     long_description=get_log_description(),
     long_description_content_type="text/markdown",
     description='Edge AI Model Development Toolkit',
