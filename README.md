@@ -23,7 +23,7 @@ alt="Flowchart showing the model development, conversion, and deployment flow fr
 
 Edge-MDT contains the following packages:
 
-- [MCT](https://github.com/sony/model_optimization) (Model Compression
+- [MCT](https://github.com/SonySemiconductorSolutions/mct-model-optimization) (Model Compression
   Toolkit) – An open-source python package for quantizing and
   compressing a neural network model, so that the model can be converted
   to run efficiently on the hardware device, while maintaining the
@@ -31,7 +31,7 @@ Edge-MDT contains the following packages:
   floating-point model.
 
 - [IMX500
-  Converter](https://developer.aitrios.sony-semicon.com/en/raspberrypi-ai-camera/documentation/imx500-converter)
+  Converter](https://developer.aitrios.sony-semicon.com/en/docs/raspberry-pi-ai-camera/imx500-converter)
   – A CLI application that converts (compiles) the neural network model
   that is the output of MCT (.onnx or .keras formats) into a binary file
   that can be loaded onto the IMX500 device, and executed in real time.
@@ -148,12 +148,12 @@ Raspberry Pi
 Edge-MDT makes use of several framework extensions. The extensions are
 installed as dependent libraries for the MCT and Converter packages:
 
-- [MCTQ](https://github.com/sony/mct_quantizers) – An open-source python
+- [MCTQ](https://github.com/SonySemiconductorSolutions/mct-quantization-layers) – An open-source python
   library of quantization layers and classes that is used by MCT to add
   quantization to a network. You do not need to directly make use of
   this library.
 
-- [Custom layers](https://github.com/sony/custom_layers) – An
+- [Custom layers](https://github.com/SonySemiconductorSolutions/aitrios-edge-mdt-cl) – An
   open-source python library containing several post processing layers.
   If some of the layers in an existing model cannot be converted, you
   can replace these specific layers in your model with one of the
