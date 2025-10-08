@@ -1,17 +1,8 @@
 name: Run build
 
 on:
-  push:
-    branches:
-      - main
-    paths-ignore:
-      - '**/*.md'
-      - '**/*.adoc'
+  workflow_dispatch: # Allow manual triggers
   pull_request:
-    paths-ignore:
-      - '**/*.md'
-      - '**/*.adoc'
-
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -25,7 +16,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        tf-version: [2.12, 2.13, 2.14, 2.15]
+        tf-version: [2.14, 2.15]
 
     steps:
       - name: Checkout code
@@ -41,7 +32,7 @@ jobs:
           python -m pip install --upgrade pip
           ./build.sh
           pip install jupyterlab ipython==7.34.0 tensorflow==${{ matrix.tf-version }}
-          pip install dist/edge_mdt_nightly-0.0.0.dev0-py3-none-any.whl['tf']
+          pip install dist/edge_mdt-0.0.0.dev0-py3-none-any.whl['tf']
 
       - name: pip list
         run: |
@@ -62,8 +53,6 @@ jobs:
             ./tutorials/keras_mobilenetv2_output.ipynb
             ./tutorials/mobilenet_tf/packerOut.zip
 
-
-
   tests-pytorch:
     name: Build PyTorch
     runs-on: ubuntu-latest
@@ -71,7 +60,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        pt-version: [ '2.0', 2.1, 2.2, 2.3, 2.4, 2.5, 2.6]
+        pt-version: [2.3, 2.4, 2.5, 2.6]
 
     steps:
       - name: Checkout code
@@ -87,7 +76,7 @@ jobs:
           python -m pip install --upgrade pip
           ./build.sh
           pip install jupyterlab torch==${{ matrix.pt-version }}
-          pip install dist/edge_mdt_nightly-0.0.0.dev0-py3-none-any.whl['pt']
+          pip install dist/edge_mdt-0.0.0.dev0-py3-none-any.whl['pt']
 
       - name: pip list
         run: |

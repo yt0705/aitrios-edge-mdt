@@ -1,8 +1,8 @@
 # -------------------------------------------------------------------------------
-# (c) Copyright 2025 Sony Semiconductor Israel, Ltd. All rights reserved.
+# (c) Copyright 2025 Sony Semiconductor Solutions, Inc. All rights reserved.
 #
 #      This software, in source or object form (the "Software"), is the
-#      property of Sony Semiconductor Israel Ltd. (the "Company") and/or its
+#      property of Sony Semiconductor Solutions Inc. (the "Company") and/or its
 #      licensors, which have all right, title and interest therein, You
 #      may use the Software only in accordance with the terms of written
 #      license agreement between you and the Company (the "License").
@@ -38,8 +38,6 @@ tpc_dev_def_version = "1.1.0" if is_dev else None
 tcp_version = get_env('TPC_VERSION', tpc_dev_def_version)
 custom_layers_def_version = "1.0.0" if is_dev else None
 custom_layers_version = get_env('CUSTOM_LAYERS_VERSION', custom_layers_def_version)
-is_nightly = os.environ.get("IS_NIGHTLY", "true") == "true"
-name = 'edge-mdt-nightly' if is_nightly else 'edge-mdt'
 
 def get_log_description():
     with open("README.md", "r") as fh:
@@ -48,11 +46,9 @@ def get_log_description():
 
 
 setup(
-    name=name,
-    author="ssi-dnn-dev",
-    author_email="ssi-dnn-dev@sony.com",
-    maintainer="ssi-dnn-dev",
-    maintainer_email="ssi-dnn-dev@sony.com",
+    name="edge-mdt",
+    author="sss-dnn-dev",
+    maintainer="sss-dnn-dev",
     long_description=get_log_description(),
     long_description_content_type="text/markdown",
     description='Edge AI Model Development Toolkit',
